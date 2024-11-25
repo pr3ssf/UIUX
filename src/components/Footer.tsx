@@ -22,35 +22,42 @@ export const Footer = () => {
         mx="auto"
         gap={4}
       >
-        <Text color="gray.400" margin={0} fontSize="sm"> {/* Уменьшаем размер шрифта */}
+        <Text color="gray.400" margin={0} fontSize="sm">
           &copy; 2024 Your Company. All rights reserved.
         </Text>
 
-        <UnorderedList
-          display="flex"
-          listStyleType="none"
-          margin={0}
-          padding={0}
-          gap={4}
-        >
-          <ListItem>
-            <Link href="/privacy" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
-              Privacy Policy
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/terms" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
-              Terms of Service
-            </Link>
-          </ListItem>
-        </UnorderedList>
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <UnorderedList
+            listStyleType="none"
+            margin={0}
+            padding={0}
+            display="flex" // Устанавливаем display flex для размещения в строку
+            gap={4} // Устанавливаем промежуток между элементами
+          >
+            <ListItem>
+              <Link href="/privacy" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
+                Privacy Policy
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="/terms" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
+                Terms of Service
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Text color="gray.400" fontSize="sm"> {/* Добавляем серый текст для Contact Us */}
+                Contact Us
+              </Text>
+            </ListItem>
+          </UnorderedList>
+        </Box>
 
         <Box>
-          <Link href="https://twitter.com" aria-label="Twitter" color="brand.10" mr={4} _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
-            Twitter
+          <Link href="https://vk.com" aria-label="VK" color="brand.10" mr={4} _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
+            VK
           </Link>
-          <Link href="https://facebook.com" aria-label="Facebook" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
-            Facebook
+          <Link href="https://telegram.org" aria-label="Telegram" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
+            Telegram
           </Link>
         </Box>
       </Flex>
