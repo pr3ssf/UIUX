@@ -68,7 +68,7 @@ const MainProjects = () => {
 
       <div className="buffer"></div>
 
-      <div className="parallax-container parallax-container2">
+      <div className="parallax-container parallax-container3">
         <Flex 
           direction={{ base: "column", md: "row" }} 
           alignItems="center" 
