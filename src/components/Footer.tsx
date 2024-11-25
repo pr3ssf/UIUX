@@ -17,12 +17,12 @@ export const Footer = () => {
       <Flex
         direction={{ base: "column", md: "row" }}
         alignItems="center"  // Центрирование элементов Flex-контейнера по вертикали
-        justifyContent="space-between"
+        justifyContent="space-evenly" // Равномерное распределение
         w="100%"
         mx="auto"
         gap={4}
       >
-        <Text color="gray.400" margin={0} >
+        <Text color="gray.400" margin={0} fontSize="sm"> {/* Уменьшаем размер шрифта */}
           &copy; 2024 Your Company. All rights reserved.
         </Text>
 
@@ -34,27 +34,22 @@ export const Footer = () => {
           gap={4}
         >
           <ListItem>
-            <Link href="/privacy" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }}>
+            <Link href="/privacy" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
               Privacy Policy
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="/terms" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }}>
+            <Link href="/terms" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
               Terms of Service
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/contact" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }}>
-              Contact Us
             </Link>
           </ListItem>
         </UnorderedList>
 
         <Box>
-          <Link href="https://twitter.com" aria-label="Twitter" color="brand.10" mr={4} _hover={{ textDecoration: "underline", color: "brand.100" }}>
+          <Link href="https://twitter.com" aria-label="Twitter" color="brand.10" mr={4} _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
             Twitter
           </Link>
-          <Link href="https://facebook.com" aria-label="Facebook" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }}>
+          <Link href="https://facebook.com" aria-label="Facebook" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm"> {/* Уменьшаем размер шрифта */}
             Facebook
           </Link>
         </Box>
