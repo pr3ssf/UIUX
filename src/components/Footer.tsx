@@ -33,6 +33,7 @@ export const Footer = () => {
             padding={0}
             display="flex" // Устанавливаем display flex для размещения в строку
             gap={4} // Устанавливаем промежуток между элементами
+            whiteSpace="nowrap" // Предотвращаем перенос текста
           >
             <ListItem>
               <Link href="/privacy" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
