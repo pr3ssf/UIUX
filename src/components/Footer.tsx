@@ -20,7 +20,7 @@ export const Footer = () => {
         justifyContent="space-evenly" // Равномерное распределение
         w="100%"
         mx="auto"
-        gap={4}
+        gap={0}
       >
         <Text color="gray.400" margin={0} fontSize="sm">
           &copy; 2024 Your Company. All rights reserved.
@@ -52,8 +52,8 @@ export const Footer = () => {
           </UnorderedList>
         </Box>
 
-        <Box display="flex" flexDirection="column" alignItems="center">
-          <Link href="https://vk.com" aria-label="VK" color="brand.10" mr={4} _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
+        <Box display="flex" flexDirection="column" alignItems="center" gap={0}>
+          <Link href="https://vk.com" aria-label="VK" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
             VK
           </Link>
           <Link href="https://telegram.org" aria-label="Telegram" color="brand.10" _hover={{ textDecoration: "underline", color: "brand.100" }} fontSize="sm">
