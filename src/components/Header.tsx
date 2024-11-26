@@ -41,7 +41,7 @@ export const Header = () => {
         zIndex={1000} // выше контента
         fontWeight="normal"
       >
-        <Flex direction="row" alignItems="center" gap="10px">
+        <Flex direction="row" alignItems="center" gap="1px">
           <Link
             color="brand.200"
             fontSize="lg"
