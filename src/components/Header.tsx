@@ -39,21 +39,23 @@ export const Header = () => {
         position="fixed" // фиксанция
         top={0} // расположение
         zIndex={1000} // выше контента
-        fontWeight="normal"
+        // fontWeight="normal"
       >
-        <Flex direction="row" alignItems="center" gap="1px">
+        <Flex direction="row" alignItems="center">
           <Link
+            padding={4}
             color="brand.200"
-            fontSize="lg"
+            fontSize="md"
             cursor="pointer"
             _hover={{textDecoration: "underline", color: "brand.100" }}
             onClick={() => navigate('/')}
           >
-            Main Projects
+            Main Works
           </Link>
           <Link
+            padding={4}
             color="brand.200"
-            fontSize="lg"
+            fontSize="md"
             cursor="pointer"
             _hover={{textDecoration: "underline", color: "brand.100" }}
             onClick={() => navigate('/sideprojects')}
@@ -61,8 +63,9 @@ export const Header = () => {
             Side Projects
           </Link>
           <Link
+            padding={4}
             color="brand.200"
-            fontSize="lg"
+            fontSize="md"
             cursor="pointer"
             _hover={{textDecoration: "underline", color: "brand.100" }}
             onClick={() => navigate('/aboutme')}

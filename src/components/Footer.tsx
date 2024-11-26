@@ -12,12 +12,13 @@ export const Footer = () => {
       p="16px"
       boxSizing="border-box"
       display="flex"
-      alignItems="center"  // Центрирование содержимого по вертикали
+      alignItems="center"
+      zIndex={1000}
     >
       <Flex
         direction={{ base: "column", md: "row" }}
-        alignItems="center"  // Центрирование элементов Flex-контейнера по вертикали
-        justifyContent="space-evenly" // Равномерное распределение
+        alignItems="center"
+        justifyContent="space-evenly"
         w="100%"
         mx="auto"
         gap={0}

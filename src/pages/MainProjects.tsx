@@ -14,7 +14,7 @@ const MainProjects = () => {
       <div className="buffer"></div>
 
       <div className="parallax-container parallax-container2">
-        <div className="container-element">
+        <div className="container-element ">
           <div style={{ flex: 2, maxWidth: "600px" }}>
             <img src={yourImage} alt="Project Description" className="element-image" />
           </div>

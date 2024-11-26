@@ -65,6 +65,8 @@ body {
   gap: 16px;
   padding-left: 20px;
   padding-right: 20px;
+
+  height: 100%;
 }
 
 .element-image {
@@ -75,6 +77,23 @@ body {
 }
 
 /* Стили текста */
+.element-text {
+  flex: 1;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  
+  height: 100%;
+
+
+  z-index: 1;
+}
+
 .element-text-title {
   font-size: 1.125rem;
   font-weight: bold;
@@ -85,18 +104,6 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: #333;
-}
-
-.element-text {
-  flex: 1;
-  text-align: left;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 8px;
-  margin: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 100%;
 }
 
 h1 {
