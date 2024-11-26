@@ -1,62 +1,109 @@
-import { Box, Text } from '@chakra-ui/react';
 import "../styles/MainProjects.css";
+import yourImage from '../assets/Main Page.png';
 
 const MainProjects = () => {
   return (
     <div>
       <div className="parallax-container">
-      <h1>Main Projects</h1>
-      <p>
-        Main developed environments and levels. 
-      </p>
-    </div>
-
-    <div className="buffer"></div>
-
-    <div className="parallax-container parallax-container2">
-      <div className="card">
-        
-      </div>
-      <div className="card">
-        <div className="card-img"></div>
-        <h3>Rock climbing</h3>
+        <h1>Main Projects</h1>
         <p>
-          The goal is to reach the summit of a formation or the endpoint of a
-          usually pre-defined route without falling
+          Main developed environments and levels.
         </p>
-        <a href="#">Learn more</a>
       </div>
-      <div className="card">
-        <div className="card-img"></div>
-        <h3>Caving</h3>
-        <p>
-          Exploring underground through networks of tunnels and passageways,
-          which can be natural or artificial.
-        </p>
-        <a href="#">Learn more</a>
+
+      <div className="buffer"></div>
+
+      <div className="parallax-container parallax-container2">
+        <div className="container-element ">
+          <div style={{ flex: 2, maxWidth: "600px" }}>
+            <img src={yourImage} alt="Project Description" className="element-image" />
+          </div>
+          <div className='element-text'>
+            <p className="element-text-title">Project Title</p>
+            <p className='element-text-description'>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </p>
+          </div>
+        </div>
+
+        <div className="container-element">
+          <div className='element-text'>
+            <p className="element-text-title">Project Title</p>
+            <p className='element-text-description'>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </p>
+          </div>
+          <div style={{ flex: 2, maxWidth: "600px" }}>
+            <img src={yourImage} alt="Project Description" className="element-image" />
+          </div>
+        </div>
       </div>
-      <div className="card">
-        <div className="card-img"></div>
-        <h3>Paragliding</h3>
-        <p>
-          Get lift off from the mountain and enjoy through the splendor of the
-          surrounding landscape by parachute.
-        </p>
-        <a href="#">Learn more</a>
+
+      <div className="buffer"></div>
+
+      <div className="parallax-container parallax-container3">
+        <div className="container-element">
+          <div style={{ flex: 2, maxWidth: "600px" }}>
+            <img src={yourImage} alt="Project Description" className="element-image" />
+          </div>
+          <div className='element-text'>
+            <p className="element-text-title">Project Title</p>
+            <p className='element-text-description'>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </p>
+          </div>
+        </div>
+
+        <div className="container-element">
+          <div className='element-text'>
+            <p className="element-text-title">Project Title</p>
+            <p className='element-text-description'>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </p>
+          </div>
+          <div style={{ flex: 2, maxWidth: "600px" }}>
+            <img src={yourImage} alt="Project Description" className="element-image" />
+          </div>
+        </div>
       </div>
+
+      <div className="buffer"></div>
+
+      <div className="parallax-container parallax-container4">
+        <div className="container-element">
+          <div style={{ flex: 2, maxWidth: "600px" }}>
+            <img src={yourImage} alt="Project Description" className="element-image" />
+          </div>
+          <div className='element-text'>
+            <p className="element-text-title">Project Title</p>
+            <p className='element-text-description'>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </p>
+          </div>
+        </div>
+
+        <div className="container-element">
+          <div className='element-text'>
+            <p className="element-text-title">Project Title</p>
+            <p className='element-text-description'>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </p>
+          </div>
+          <div style={{ flex: 2, maxWidth: "600px" }}>
+            <img src={yourImage} alt="Project Description" className="element-image" />
+          </div>
+        </div>
+      </div>
+
+      <div className="buffer"></div>
+      
     </div>
-
-    <div className="buffer"></div>
-
-    </div>
-    
-
-  //   <Box p={5} height="100%">
-  //     <Box h="10000px" />
-  //     <Text fontSize="xl" color="brand.800">
-  //       Main Projects
-  //     </Text>
-  //   </Box>
   );
 };
 
