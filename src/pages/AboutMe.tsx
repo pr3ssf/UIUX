@@ -15,16 +15,6 @@ const AboutMe = () => {
       {/* Параллакс контейнер 2 */}
       <div className="parallax-container parallax-container2">
         <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <Image
-              src={gojoImage}
-              alt="Alexander Saprykin"
-              borderRadius="full"
-              boxSize="150px"
-              objectFit="cover"
-              ml={4}
-            />
-          </div>
           <div className='element-text'>
             <p className="element-text-title">Alexander Saprykin</p>
             <p className="element-text-description">
@@ -50,15 +40,6 @@ const AboutMe = () => {
               <ListItem>Git - Experienced</ListItem>
             </UnorderedList>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <Image
-              src={gojoImage}
-              alt="Alexander Saprykin"
-              borderRadius="full"
-              boxSize="150px"
-              objectFit="cover"
-            />
-          </div>
         </div>
       </div>
 
@@ -67,15 +48,6 @@ const AboutMe = () => {
       {/* Параллакс контейнер 3 */}
       <div className="parallax-container parallax-container3">
         <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <Image
-              src={gojoImage}
-              alt="Alexander Saprykin"
-              borderRadius="full"
-              boxSize="150px"
-              objectFit="cover"
-            />
-          </div>
           <div className='element-text'>
             <p className="element-text-title">Work Experience</p>
             <Text><strong>MAGNA ELECTRONICS</strong> (10.2023 — Present)</Text>
@@ -99,15 +71,6 @@ const AboutMe = () => {
               <ListItem>Prepared commercial project for publication on marketplaces.</ListItem>
             </UnorderedList>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <Image
-              src={gojoImage}
-              alt="Alexander Saprykin"
-              borderRadius="full"
-              boxSize="150px"
-              objectFit="cover"
-            />
-          </div>
         </div>
       </div>
 
@@ -116,15 +79,6 @@ const AboutMe = () => {
       {/* Параллакс контейнер 4 */}
       <div className="parallax-container parallax-container4">
         <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <Image
-              src={gojoImage}
-              alt="Alexander Saprykin"
-              borderRadius="full"
-              boxSize="150px"
-              objectFit="cover"
-            />
-          </div>
           <div className='element-text'>
             <p className="element-text-title">Education</p>
             <Text><strong>MTUCI</strong>, Bachelor's degree (2025)</Text>
@@ -140,15 +94,6 @@ const AboutMe = () => {
               <ListItem><strong>Blender Bros</strong> (2022) - Hard Surface</ListItem>
               <ListItem><strong>Udemy</strong> (2024) - Fusion 360 Course</ListItem>
             </UnorderedList>
-          </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <Image
-              src={gojoImage}
-              alt="Alexander Saprykin"
-              borderRadius="full"
-              boxSize="150px"
-              objectFit="cover"
-            />
           </div>
         </div>
       </div>
