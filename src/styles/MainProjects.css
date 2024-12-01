@@ -1,5 +1,5 @@
 :root {
-  --color: rgb(63 63 63);
+  --color: rgb(63, 63, 63);
 }
 
 body {
@@ -13,11 +13,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-
-  /* Минимальная высота для параллакса */
   min-height: 100vh;
-
-  /* Элементы внутри параллакс-контейнера */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,42 +26,34 @@ body {
   background-color: var(--color);
 }
 
-.parallax-container2 {
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  padding: 6rem 0;
-  background-image: url(https://images.unsplash.com/photo-1585424536945-26663ea69d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
-  gap: 1.6em;
-}
-
-.parallax-container3 {
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  padding: 6rem 0;
-  background-image: url(https://images.unsplash.com/photo-1480497490787-505ec076689f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  gap: 1.6em;
-}
-
+.parallax-container2,
+.parallax-container3,
 .parallax-container4 {
   flex-direction: row;
   flex-wrap: wrap;
-
   padding: 6rem 0;
-  background-image: url(https://images.unsplash.com/photo-1626298904573-2dd9334efb21?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   gap: 1.6em;
 }
 
-/* Стиль изображения в контейнере */
-.container-element{
+.parallax-container2 {
+  background-image: url(https://images.unsplash.com/photo-1585424536945-26663ea69d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
+}
+
+.parallax-container3 {
+  background-image: url(https://images.unsplash.com/photo-1480497490787-505ec076689f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.parallax-container4 {
+  background-image: url(https://images.unsplash.com/photo-1626298904573-2dd9334efb21?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+/* Контейнеры для элементов */
+.container-element {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 16px;
-  padding-left: 20px;
-  padding-right: 20px;
-
+  padding: 0 20px;
   height: 100%;
 }
 
@@ -86,17 +74,15 @@ body {
   border-radius: 8px;
   margin: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  
+  padding: 16px;
   height: 100%;
-
-
   z-index: 1;
 }
 
 .element-text-title {
   font-size: 1.125rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .element-text-description {
@@ -136,15 +122,14 @@ h3 {
   font-weight: 700;
 }
 
+/* Карты */
 .card {
   display: flex;
   max-width: 320px;
   flex-direction: column;
   align-items: center;
-
   padding-bottom: 1rem;
   border-radius: 0.5em;
-
   background-color: white;
   box-shadow: 0 29px 38px -15px rgb(0 0 0 / 43%);
 }
