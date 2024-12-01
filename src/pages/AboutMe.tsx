@@ -1,5 +1,6 @@
 import { Box, Heading, Text, Image, UnorderedList, ListItem, Link, Flex } from "@chakra-ui/react";
 import gojoImage from '../assets/gojo.png'; // Импортируем изображение
+import "../styles/AboutMe.css";
 
 const AboutMe = () => {
   return (
@@ -7,39 +8,74 @@ const AboutMe = () => {
       {/* Параллакс контейнер 1 */}
       <div className="parallax-container">
         <h1>About Me</h1>
-        <p>Quickly and efficiently complete tasks, including complex and unconventional cases.</p>
+        <p style={{ textAlign: "center"}}>Quickly and efficiently complete tasks, including complex and unconventional cases.</p>
       </div>
 
       <div className="buffer"></div>
 
       {/* Параллакс контейнер 2 */}
       <div className="parallax-container parallax-container2">
-        <div className="container-element">
-          <div className='element-text'>
-            <p className="element-text-title">Alexander Saprykin</p>
-            <p className="element-text-description">
+        <div className="container-element" style={{ width: "100%", margin: "0 auto"}}>
+          <div className='element-text' style={{ margin: "0 auto"}}>
+            <div className="element-text-title">Alexander Saprykin</div>
+            <div className="element-text-description">
               Generalist / Lead 3D<br />
               Moscow<br />
               Age: 21 years old
-            </p>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+
+          <div>
+            <div className="element-text" >
+              {/* Incomplete Higher Education */}
+              <div>
+                <div className="title" style={{ textAlign: "center"}}>Incomplete Higher Education</div>
+                <div className="description"><strong>2025: Moscow Technical University of Communications and Informatics</strong></div>
+                <div className="description">Information technology, Computer science and engineering</div>
+              </div>
+
+              {/* Professional Development, Courses */}
+              <div style={{ marginTop: '20px' }}>
+                <div className="title" style={{ textAlign: "center"}}>Professional Development, Courses</div>
+                <UnorderedList className="description" style={{ fontWeight: "normal"}}>
+                  <ListItem><strong>2024: Intro To Motion Graphics</strong> — Ducky 3D, Motion design in Blender</ListItem>
+                  <ListItem><strong>2024: Fusion 360 Course</strong> — Udemy, CAD modelling in Fusion 360</ListItem>
+                  <ListItem><strong>2021: 3D Modeller</strong> — 3D Club, Modelling and visualization in 3ds Max</ListItem>
+                  <ListItem><strong>2021: Hard Surface</strong> — Blender Bros, Hard-surface modelling in Blender</ListItem>
+                  <ListItem><strong>2021: PBR Texture Trip</strong> — XYZ School, Texturing in Substance Painter/Designer</ListItem>
+                </UnorderedList>
+              </div>
+            </div>
+
+            <div className='element-text'> 
+              <p className="element-text-title">Skills</p> 
+              <UnorderedList className="element-text-description"> 
+                <ListItem><strong>Advanced:</strong> Blender, Marmoset Toolbag, Unity, Adobe Substance 3D Painter</ListItem>
+                <ListItem><strong>Skillful:</strong> Adobe Photoshop, Git, Unreal Engine, RizomUV</ListItem> 
+                <ListItem><strong>Normal:</strong> Adobe Substance 3D Designer, ZBrush</ListItem> 
+              </UnorderedList> 
+            </div>
           </div>
         </div>
 
         <div className="container-element">
-          <div className='element-text'>
-            <p className="element-text-title">Skills</p>
-            <UnorderedList>
-              <ListItem>Unity - Experienced</ListItem>
-              <ListItem>Unreal Engine - Skillful</ListItem>
-              <ListItem>Blender - Expert</ListItem>
-              <ListItem>RizomUV - Experienced</ListItem>
-              <ListItem>Marmoset Toolbag - Expert</ListItem>
-              <ListItem>Adobe Substance 3D Painter - Experienced</ListItem>
-              <ListItem>Adobe Substance Designer - Skillful</ListItem>
-              <ListItem>Adobe Photoshop - Experienced</ListItem>
-              <ListItem>Git - Experienced</ListItem>
-            </UnorderedList>
-          </div>
+          
         </div>
       </div>
 

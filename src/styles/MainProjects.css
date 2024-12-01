@@ -86,6 +86,7 @@ body {
   border-radius: 8px;
   margin: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
 
   
   height: 100%;
@@ -97,6 +98,7 @@ body {
 .element-text-title {
   font-size: 1.125rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .element-text-description {
