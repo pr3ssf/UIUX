@@ -6,16 +6,86 @@ import {
   UnorderedList, 
   ListItem, 
   Link, 
-  Flex 
+  Flex,
+  Button
 } from "@chakra-ui/react";
-import gojoImage from '../assets/gojo.png'; // Импортируем изображение
+import { useState } from "react";
 import "../styles/AboutMe.css";
 
 const AboutMe = () => {
+  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"]; // Массив идентификаторов контейнеров
+  const [currentIndex, setCurrentIndex] = useState(0); // Состояние для текущего индекса
+
+  const scrollToElement = (index: number, callback?: () => void) => {
+    const elementId = containerIds[index];
+    const element = document.getElementById(elementId);
+    if (!element) {
+      console.error(`Element with id "${elementId}" not found`);
+      return;
+    }
+    element.scrollIntoView({ behavior: "smooth" });
+
+    setTimeout(() => {
+      if (callback) callback();
+    }, 800);
+  };
+
+  const scrollToNext = () => {
+    if (currentIndex < containerIds.length - 1) {
+      const newIndex = currentIndex + 1;
+      scrollToElement(newIndex, () => {
+        setCurrentIndex(newIndex);
+      });
+    } else {
+      console.log("Already at the last element");
+    }
+  };
+
+  const scrollToPrevious = () => {
+    if (currentIndex > 0) {
+      const newIndex = currentIndex - 1;
+      scrollToElement(newIndex, () => {
+        setCurrentIndex(newIndex);
+      });
+    } else {
+      console.log("Already at the first element");
+    }
+  };
+  
+  
+
   return (
     <div>
+      {/* Кнопки для прокрутки */}
+      <Flex
+        position="fixed"
+        right="20px"
+        top="50%"
+        transform="translateY(-50%)"
+        direction="column"
+        zIndex="10"
+      >
+        <Button
+          mb={2}
+          colorScheme="teal"
+          onClick={scrollToPrevious} // Прокрутка к предыдущему контейнеру
+          isDisabled={currentIndex === 0} // Отключить кнопку, если это первый контейнер
+        >
+          Вверх
+        </Button>
+        <Button
+          mt={2}
+          colorScheme="teal"
+          onClick={scrollToNext} // Прокрутка к следующему контейнеру
+          isDisabled={currentIndex === containerIds.length - 1} // Отключить кнопку, если это последний контейнер
+        >
+          Вниз
+        </Button>
+      </Flex>
+
+
       {/* Параллакс контейнер 1 */}
-      <div className="parallax-container">
+      <div id="parallax1" className="parallax-container">
         <h1>About Me</h1>
         <p style={{ textAlign: "center" }}>
           Quickly and efficiently complete tasks, including complex and unconventional cases.
@@ -25,8 +95,8 @@ const AboutMe = () => {
       <div className="buffer"></div>
 
       {/* Параллакс контейнер 2 */}
-      <div className="parallax-container parallax-container2">
-        <div className="container-element" style={{ width: "100%", margin: "0 auto" }}>
+      <div id="parallax2" className="parallax-container parallax-container2">
+      <div className="container-element" style={{ width: "100%", margin: "0 auto" }}>
           <div className="element-text" style={{ margin: "0 auto" }}>
             <div className="element-text-title">Alexander Saprykin</div>
             <div className="element-text-description">
@@ -108,14 +178,12 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-
-        <div className="container-element"></div>
       </div>
 
       <div className="buffer"></div>
 
       {/* Параллакс контейнер 3 */}
-      <div className="parallax-container parallax-container3">
+      <div id="parallax3" className="parallax-container parallax-container3">
         <div
           className="container-element"
           style={{ display: "flex", flex: "1", flexDirection: "column", width: "100%" }}
@@ -166,7 +234,7 @@ const AboutMe = () => {
       <div className="buffer"></div>
 
       {/* Параллакс контейнер 4 */}
-      <div className="parallax-container parallax-container4">
+      <div id="parallax4" className="parallax-container parallax-container4">
         <div
           className="container-element"
           style={{ display: "flex", flex: "1", flexDirection: "column", width: "100%" }}
@@ -230,6 +298,7 @@ const AboutMe = () => {
       </div>
 
       <div className="buffer"></div>
+
     </div>
   );
 };
