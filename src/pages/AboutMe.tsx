@@ -1,21 +1,39 @@
 import { 
-  Box, 
-  Heading, 
-  Text, 
-  Image, 
   UnorderedList, 
   ListItem, 
-  Link, 
   Flex,
-  Button
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ArrowButton from '../components/button/ArrowButton.tsx';
 import "../styles/AboutMe.css";
 
 const AboutMe = () => {
-  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"]; // Массив идентификаторов контейнеров
-  const [currentIndex, setCurrentIndex] = useState(0); // Состояние для текущего индекса
+  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Функция для блокировки прокрутки страницы
+    const preventWheelScroll = (event: WheelEvent) => {
+      event.preventDefault(); // Отменяет стандартное поведение прокрутки
+    };
+  
+    useEffect(() => {
+
+      // Всегда начинать с 1 элемента
+      const firstElement = document.getElementById('parallax1');
+      if (firstElement) {
+        firstElement.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      window.addEventListener('wheel', preventWheelScroll, { passive: false });
+  
+      // Очищаем обработчик при размонтировании компонента
+      return () => {
+        window.removeEventListener('wheel', preventWheelScroll);
+      };
+
+    }, []);
+
+  // Перемещение по контейнерам
   const scrollToElement = (index: number, callback?: () => void) => {
     const elementId = containerIds[index];
     const element = document.getElementById(elementId);
@@ -25,11 +43,13 @@ const AboutMe = () => {
     }
     element.scrollIntoView({ behavior: "smooth" });
 
+    // Задержка перед деакцивацией кнопки
     setTimeout(() => {
       if (callback) callback();
-    }, 800);
+    }, 707);
   };
 
+  // Прокрутка к следующему элементу
   const scrollToNext = () => {
     if (currentIndex < containerIds.length - 1) {
       const newIndex = currentIndex + 1;
@@ -41,6 +61,7 @@ const AboutMe = () => {
     }
   };
 
+  // Прокрутка к предыдущему элементу
   const scrollToPrevious = () => {
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
@@ -52,39 +73,36 @@ const AboutMe = () => {
     }
   };
   
-  
-
   return (
     <div>
       {/* Кнопки для прокрутки */}
       <Flex
         position="fixed"
         right="20px"
-        top="50%"
-        transform="translateY(-50%)"
+        top="0"
+        height="100%"
         direction="column"
+        justifyContent="space-between"
         zIndex="10"
       >
-        <Button
-          mb={2}
-          colorScheme="teal"
-          onClick={scrollToPrevious} // Прокрутка к предыдущему контейнеру
-          isDisabled={currentIndex === 0} // Отключить кнопку, если это первый контейнер
-        >
-          Вверх
-        </Button>
-        <Button
-          mt={2}
-          colorScheme="teal"
-          onClick={scrollToNext} // Прокрутка к следующему контейнеру
-          isDisabled={currentIndex === containerIds.length - 1} // Отключить кнопку, если это последний контейнер
-        >
-          Вниз
-        </Button>
+        {/* Кнопка вверх */}
+        <ArrowButton
+          symbol="up"
+          onClick={scrollToPrevious}
+          isDisabled={currentIndex === 0}
+          mt="7rem"
+        />
+
+        {/* Кнопка вниз */}
+        <ArrowButton
+          symbol="down"
+          onClick={scrollToNext}
+          isDisabled={currentIndex === containerIds.length - 1}
+          mb="7rem"
+        />
       </Flex>
 
-
-      {/* Параллакс контейнер 1 */}
+      {/* Параллакс контейнер 1 - Intro */}
       <div id="parallax1" className="parallax-container">
         <h1>About Me</h1>
         <p style={{ textAlign: "center" }}>
@@ -94,7 +112,7 @@ const AboutMe = () => {
 
       <div className="buffer"></div>
 
-      {/* Параллакс контейнер 2 */}
+      {/* Параллакс контейнер 2 - Self */}
       <div id="parallax2" className="parallax-container parallax-container2">
       <div className="container-element" style={{ width: "100%", margin: "0 auto" }}>
           <div className="element-text" style={{ margin: "0 auto" }}>
@@ -182,14 +200,14 @@ const AboutMe = () => {
 
       <div className="buffer"></div>
 
-      {/* Параллакс контейнер 3 */}
+      {/* Параллакс контейнер 3 - Work Experience */}
       <div id="parallax3" className="parallax-container parallax-container3">
         <div
           className="container-element"
           style={{ display: "flex", flex: "1", flexDirection: "column", width: "100%" }}
         >
           <div className="element-text" style={{ width: "100%", textAlign: "center" }}>
-            <h1>Work Experience</h1>
+            <div className="title">Work Experience</div>
           </div>
 
           <div className="element-text" style={{ width: "100%" }}>
@@ -233,7 +251,7 @@ const AboutMe = () => {
 
       <div className="buffer"></div>
 
-      {/* Параллакс контейнер 4 */}
+      {/* Параллакс контейнер 4 - Freelace & Contacts */}
       <div id="parallax4" className="parallax-container parallax-container4">
         <div
           className="container-element"

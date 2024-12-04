@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 :root {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,16 +29,17 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Изменено на вертикальную компоновку */
-  min-width: 100%; /* Занимает всю ширину */
-  min-height: 100vh; /* Занимает всю высоту экрана */
-  width: 100%; /* Занимает всю доступную ширину */
-  height: 100%; /* Занимает всю доступную высоту */
+  flex-direction: column;
+  min-width: 100%;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-weight: 1000;
 }
 
 button {
@@ -68,11 +72,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-@font-face {
-  font-family: 'Inter Black';
-  src: url('./fonts/Inter-Black.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
 }
