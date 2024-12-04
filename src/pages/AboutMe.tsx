@@ -1,21 +1,39 @@
 import { 
-  Box, 
-  Heading, 
-  Text, 
-  Image, 
   UnorderedList, 
   ListItem, 
-  Link, 
   Flex,
-  Button
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ArrowButton from '../components/button/ArrowButton.tsx';
 import "../styles/AboutMe.css";
 
 const AboutMe = () => {
-  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"]; // Массив идентификаторов контейнеров
-  const [currentIndex, setCurrentIndex] = useState(0); // Состояние для текущего индекса
+  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Функция для блокировки прокрутки страницы
+    const preventWheelScroll = (event: WheelEvent) => {
+      event.preventDefault(); // Отменяет стандартное поведение прокрутки
+    };
+  
+    useEffect(() => {
+
+      // Всегда начинать с 1 элемента
+      const firstElement = document.getElementById('parallax1');
+      if (firstElement) {
+        firstElement.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      window.addEventListener('wheel', preventWheelScroll, { passive: false });
+  
+      // Очищаем обработчик при размонтировании компонента
+      return () => {
+        window.removeEventListener('wheel', preventWheelScroll);
+      };
+
+    }, []);
+
+  // Перемещение по контейнерам
   const scrollToElement = (index: number, callback?: () => void) => {
     const elementId = containerIds[index];
     const element = document.getElementById(elementId);
@@ -25,11 +43,13 @@ const AboutMe = () => {
     }
     element.scrollIntoView({ behavior: "smooth" });
 
+    // Задержка перед деакцивацией кнопки
     setTimeout(() => {
       if (callback) callback();
     }, 800);
   };
 
+  // Прокрутка к следующему элементу
   const scrollToNext = () => {
     if (currentIndex < containerIds.length - 1) {
       const newIndex = currentIndex + 1;
@@ -41,6 +61,7 @@ const AboutMe = () => {
     }
   };
 
+  // Прокрутка к предыдущему элементу
   const scrollToPrevious = () => {
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
@@ -52,8 +73,6 @@ const AboutMe = () => {
     }
   };
   
-  
-
   return (
     <div>
       {/* Кнопки для прокрутки */}
@@ -67,63 +86,21 @@ const AboutMe = () => {
         zIndex="10"
       >
         {/* Кнопка вверх */}
-        <Button
+        <ArrowButton
+          symbol="↑"
           onClick={scrollToPrevious}
           isDisabled={currentIndex === 0}
-          width="40px"
-          height="100px"
-          border="2px solid gray"
-          borderRadius="8px"
-          background="rgba(255, 255, 255, 0.2)"
-          backdropFilter="blur(10px)"
-          color="black"
-          fontSize="2xl" // Увеличенный размер текста для стрелок
-          fontWeight="bold"
-          _hover={{
-            background: "rgba(255, 255, 255, 0.3)",
-            borderColor: "rgb(45, 55, 72)", // Изменение цвета обводки при наведении
-          }}
-          _focus={{
-            outline: "none",
-            boxShadow: "none",
-          }}
-          boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
-          mt="7rem" // Отступ от верхнего края экрана
-        >
-          ↑
-        </Button>
+          mt="7rem"
+        />
 
         {/* Кнопка вниз */}
-        <Button
+        <ArrowButton
+          symbol="↓"
           onClick={scrollToNext}
           isDisabled={currentIndex === containerIds.length - 1}
-          width="40px"
-          height="100px"
-          border="2px solid gray"
-          borderRadius="8px"
-          background="rgba(255, 255, 255, 0.2)"
-          backdropFilter="blur(10px)"
-          color="black"
-          fontSize="2xl" // Увеличенный размер текста для стрелок
-          fontWeight="bold"
-          _hover={{
-            background: "rgba(255, 255, 255, 0.3)",
-            borderColor: "rgb(45, 55, 72)", // Изменение цвета обводки при наведении
-          }}
-          _focus={{
-            outline: "none",
-            boxShadow: "none",
-          }}
-          boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
-          mb="7rem" // Отступ от нижнего края экрана
-        >
-          ↓
-        </Button>
+          mb="7rem"
+        />
       </Flex>
-
-
-
-
 
       {/* Параллакс контейнер 1 */}
       <div id="parallax1" className="parallax-container">
