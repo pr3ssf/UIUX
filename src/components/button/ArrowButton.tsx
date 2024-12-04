@@ -16,7 +16,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ symbol, ...props }) => {
       background="rgba(255, 255, 255, 0.2)"
       backdropFilter="blur(10px)"
       color="black"
-      fontSize="4xl"
+      fontSize="2xl"
       fontWeight="bold"
       _hover={{
         background: "rgba(255, 255, 255, 0.3)",

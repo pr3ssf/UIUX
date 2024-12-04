@@ -8,8 +8,8 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 // Определяем тему с новым шрифтом
 const theme = extendTheme({
   fonts: {
-    heading: 'Arial, sans-serif', // Замените 'Inter Black' на 'Arial'
-    body: 'Arial, sans-serif',
+    heading: 'Inter, sans-serif',
+    body: 'Inter, sans-serif',
   },
   colors: {
     brand: {
