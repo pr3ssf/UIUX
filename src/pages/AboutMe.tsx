@@ -60,28 +60,69 @@ const AboutMe = () => {
       <Flex
         position="fixed"
         right="20px"
-        top="50%"
-        transform="translateY(-50%)"
+        top="0"
+        height="100%"
         direction="column"
+        justifyContent="space-between"
         zIndex="10"
       >
+        {/* Кнопка вверх */}
         <Button
-          mb={2}
-          colorScheme="teal"
-          onClick={scrollToPrevious} // Прокрутка к предыдущему контейнеру
-          isDisabled={currentIndex === 0} // Отключить кнопку, если это первый контейнер
+          onClick={scrollToPrevious}
+          isDisabled={currentIndex === 0}
+          width="40px"
+          height="100px"
+          border="2px solid gray"
+          borderRadius="8px"
+          background="rgba(255, 255, 255, 0.2)"
+          backdropFilter="blur(10px)"
+          color="black"
+          fontSize="2xl" // Увеличенный размер текста для стрелок
+          fontWeight="bold"
+          _hover={{
+            background: "rgba(255, 255, 255, 0.3)",
+            borderColor: "rgb(45, 55, 72)", // Изменение цвета обводки при наведении
+          }}
+          _focus={{
+            outline: "none",
+            boxShadow: "none",
+          }}
+          boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
+          mt="7rem" // Отступ от верхнего края экрана
         >
-          Вверх
+          ↑
         </Button>
+
+        {/* Кнопка вниз */}
         <Button
-          mt={2}
-          colorScheme="teal"
-          onClick={scrollToNext} // Прокрутка к следующему контейнеру
-          isDisabled={currentIndex === containerIds.length - 1} // Отключить кнопку, если это последний контейнер
+          onClick={scrollToNext}
+          isDisabled={currentIndex === containerIds.length - 1}
+          width="40px"
+          height="100px"
+          border="2px solid gray"
+          borderRadius="8px"
+          background="rgba(255, 255, 255, 0.2)"
+          backdropFilter="blur(10px)"
+          color="black"
+          fontSize="2xl" // Увеличенный размер текста для стрелок
+          fontWeight="bold"
+          _hover={{
+            background: "rgba(255, 255, 255, 0.3)",
+            borderColor: "rgb(45, 55, 72)", // Изменение цвета обводки при наведении
+          }}
+          _focus={{
+            outline: "none",
+            boxShadow: "none",
+          }}
+          boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
+          mb="7rem" // Отступ от нижнего края экрана
         >
-          Вниз
+          ↓
         </Button>
       </Flex>
+
+
+
 
 
       {/* Параллакс контейнер 1 */}
