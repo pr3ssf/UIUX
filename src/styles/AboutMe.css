@@ -4,7 +4,6 @@
 
 body {
   margin: 0;
-  font-family: Poppins, sans-serif;
 }
 
 /* Параллакс контейнеры */
@@ -90,10 +89,10 @@ body {
   font-weight: normal;
 }
 
-h1 {
+/* h1 {
   font-size: 3rem;
   font-weight: 1000;
-}
+} */
 
 p {
   max-width: 52ch;

@@ -1,4 +1,3 @@
-// ArrowButton.tsx
 import React from 'react';
 import { Button, ButtonProps } from '@chakra-ui/react';
 
@@ -17,7 +16,6 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ symbol, ...props }) => {
       backdropFilter="blur(10px)"
       color="black"
       fontSize="2xl"
-      fontWeight="bold"
       _hover={{
         background: "rgba(255, 255, 255, 0.3)",
         borderColor: "rgb(45, 55, 72)",
@@ -29,7 +27,12 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ symbol, ...props }) => {
       boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
       {...props}
     >
-      {symbol}
+      <i
+        className={`fas fa-arrow-${symbol}`}
+        style={{
+          fontWeight: 600,
+        }}
+      />
     </Button>
   );
 };

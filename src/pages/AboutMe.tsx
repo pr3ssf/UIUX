@@ -46,7 +46,7 @@ const AboutMe = () => {
     // Задержка перед деакцивацией кнопки
     setTimeout(() => {
       if (callback) callback();
-    }, 800);
+    }, 707);
   };
 
   // Прокрутка к следующему элементу
@@ -87,7 +87,7 @@ const AboutMe = () => {
       >
         {/* Кнопка вверх */}
         <ArrowButton
-          symbol="↑"
+          symbol="up"
           onClick={scrollToPrevious}
           isDisabled={currentIndex === 0}
           mt="7rem"
@@ -95,14 +95,14 @@ const AboutMe = () => {
 
         {/* Кнопка вниз */}
         <ArrowButton
-          symbol="↓"
+          symbol="down"
           onClick={scrollToNext}
           isDisabled={currentIndex === containerIds.length - 1}
           mb="7rem"
         />
       </Flex>
 
-      {/* Параллакс контейнер 1 */}
+      {/* Параллакс контейнер 1 - Intro */}
       <div id="parallax1" className="parallax-container">
         <h1>About Me</h1>
         <p style={{ textAlign: "center" }}>
@@ -112,7 +112,7 @@ const AboutMe = () => {
 
       <div className="buffer"></div>
 
-      {/* Параллакс контейнер 2 */}
+      {/* Параллакс контейнер 2 - Self */}
       <div id="parallax2" className="parallax-container parallax-container2">
       <div className="container-element" style={{ width: "100%", margin: "0 auto" }}>
           <div className="element-text" style={{ margin: "0 auto" }}>
@@ -200,14 +200,14 @@ const AboutMe = () => {
 
       <div className="buffer"></div>
 
-      {/* Параллакс контейнер 3 */}
+      {/* Параллакс контейнер 3 - Work Experience */}
       <div id="parallax3" className="parallax-container parallax-container3">
         <div
           className="container-element"
           style={{ display: "flex", flex: "1", flexDirection: "column", width: "100%" }}
         >
           <div className="element-text" style={{ width: "100%", textAlign: "center" }}>
-            <h1>Work Experience</h1>
+            <div className="title">Work Experience</div>
           </div>
 
           <div className="element-text" style={{ width: "100%" }}>
@@ -251,7 +251,7 @@ const AboutMe = () => {
 
       <div className="buffer"></div>
 
-      {/* Параллакс контейнер 4 */}
+      {/* Параллакс контейнер 4 - Freelace & Contacts */}
       <div id="parallax4" className="parallax-container parallax-container4">
         <div
           className="container-element"
