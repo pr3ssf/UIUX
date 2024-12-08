@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';  // Импортируем motion
+import { Typewriter } from 'react-simple-typewriter';  // Импортируем Typewriter
 
 interface QuoteResponse {
   q: string; // Цитата
@@ -12,6 +13,7 @@ export const Header = () => {
   const [headerHeight, setHeaderHeight] = useState('70px');
   const [marginSize, setMarginSize] = useState(16);
   const [quote, setQuote] = useState<string>(''); // Состояние для цитаты
+  const [isTyping, setIsTyping] = useState<boolean>(false); // Состояние для отслеживания процесса печати
 
   // Функция для получения случайной цитаты
   const fetchQuote = async () => {
@@ -84,7 +86,23 @@ export const Header = () => {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 1 }}
             >
-              <Text fontStyle="italic" minWidth="100%">{quote}</Text> {/* Отображаем цитату */}
+              <Text fontStyle="italic" minWidth="100%">
+                <Typewriter
+                  words={[quote]}  // Используем состояние для цитаты
+                  loop={1}
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
+                  onDelete={() => {
+                    setIsTyping(false); // Состояние стирания текста
+                  }}
+                  onType={() => {
+                    setIsTyping(true); // Состояние печати текста
+                  }}
+                />
+              </Text>
             </motion.div>
           </Box>
 
