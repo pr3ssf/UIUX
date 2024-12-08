@@ -57,16 +57,16 @@ export const Footer = () => {
                 Terms of Service
               </Link>
             </ListItem>
-            <ListItem>
+            {/* <ListItem>
               <Text color="gray.400" fontSize="sm">
                 Contact Us
               </Text>
-            </ListItem>
+            </ListItem> */}
           </UnorderedList>
         </Box>
 
         {/* Social Media Links */}
-        <Box display="flex" flexDirection="column" alignItems="center" gap={0}>
+        {/* <Box display="flex" flexDirection="column" alignItems="center" gap={0}>
           <Link
             href="https://vk.com"
             aria-label="VK"
@@ -85,7 +85,7 @@ export const Footer = () => {
           >
             Telegram
           </Link>
-        </Box>
+        </Box> */}
       </Flex>
     </Box>
   );
