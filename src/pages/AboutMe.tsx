@@ -6,6 +6,7 @@ import {
 import { useState, useEffect } from "react";
 import ArrowButton from '../components/button/ArrowButton.tsx';
 import "../styles/AboutMe.css";
+import mePhoto from '../assets/mePhoto.jpg';
 
 const AboutMe = () => {
   const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
@@ -114,33 +115,18 @@ const AboutMe = () => {
 
       {/* Параллакс контейнер 2 - Self */}
       <div id="parallax2" className="parallax-container parallax-container2">
-      <div className="container-element" style={{ width: "100%", margin: "0 auto" }}>
-          <div className="element-text" style={{ margin: "0 auto" }}>
+      <div className="container-element" style={{ width: "100%", margin: "0 auto", minHeight: "100%"}}>
+          <div className="element-text" style={{ margin: "0 auto", width: "35%", }}>
             <div className="element-text-title">Alexander Saprykin</div>
             <div className="element-text-description">
-              Generalist / Lead 3D<br />
-              Moscow<br />
+              Generalist / Lead 3D
+              Moscow
               Age: 21 years old
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
+            <img className="element-image" src={mePhoto} alt="My Photo"/>
           </div>
 
-          <div>
+          <div style={{ margin: "0 auto", width: "65%"}}>
             <div className="element-text">
               {/* Incomplete Higher Education */}
               <div>
@@ -181,7 +167,7 @@ const AboutMe = () => {
             </div>
 
             <div className="element-text">
-              <p className="element-text-title">Skills</p>
+              <div className="element-text-title">Skills</div>
               <UnorderedList className="element-text-description">
                 <ListItem>
                   <strong>Advanced:</strong> Blender, Marmoset Toolbag, Unity, Adobe Substance 3D Painter
