@@ -6,7 +6,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import ArrowButton from '../components/button/ArrowButton.tsx';
+import ArrowButton from '../components/ArrowButton.tsx';
 
 const SideProjects = () => {
   const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];

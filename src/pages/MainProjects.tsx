@@ -1,14 +1,23 @@
 import "../styles/MainProjects.css";
-import yourImage from "../assets/Main Page.png";
+import image1_1 from "../assets/Main Page.png";
+import image1_2 from "../assets/bgBubblesBlurred.png";
+
 import { 
   UnorderedList, 
   ListItem, 
   Flex,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import ArrowButton from '../components/button/ArrowButton.tsx';
+import ArrowButton from '../components/ArrowButton.tsx';
+import Gallery from "../components/Gallery.tsx";
 
 const MainProjects = () => {
+  const gallery1 = [
+    image1_1,
+    image1_2
+    // Добавьте пути к своим изображениям
+  ];
+
   const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -114,29 +123,16 @@ const MainProjects = () => {
 
       {/* Section 1 */}
       <div id="parallax2" className="parallax-container parallax-container2">
-        <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+        <div className="container-element" style={{display: "flex", flexDirection: "column", width: "100%", height: "100%"}}>
+          <Gallery images={gallery1}/>
           <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-        </div>
-
-        <div className="container-element">
-          <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
+            </div>
           </div>
         </div>
       </div>
@@ -146,9 +142,9 @@ const MainProjects = () => {
       {/* Section 2 */}
       <div id="parallax3" className="parallax-container parallax-container3">
         <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
+          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
             <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          </div> */}
           <div className="element-text">
             <p className="element-text-title">Project Title</p>
             <p className="element-text-description">
@@ -166,9 +162,9 @@ const MainProjects = () => {
               You can add more details here to give viewers a better understanding of what this project is about.
             </p>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
+          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
             <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -177,9 +173,9 @@ const MainProjects = () => {
       {/* Section 3 */}
       <div id="parallax4" className="parallax-container parallax-container4">
         <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
+          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
             <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          </div> */}
           <div className="element-text">
             <p className="element-text-title">Project Title</p>
             <p className="element-text-description">
@@ -197,9 +193,9 @@ const MainProjects = () => {
               You can add more details here to give viewers a better understanding of what this project is about.
             </p>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
+          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
             <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          </div> */}
         </div>
       </div>
 

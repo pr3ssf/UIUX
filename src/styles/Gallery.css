@@ -1,0 +1,41 @@
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+  }
+  
+  .gallery-images {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery-image {
+    border-radius: 8px;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border: 2px solid gray; /* Добавлен серый бордер толщиной 2 пикселя */
+    border-radius: 8px; /* Круглые углы для более мягкого внешнего вида */
+  }
+  
+  .arrow-left {
+    left: 10px;
+  }
+  
+  .arrow-right {
+    right: 10px;
+  }
+  

@@ -4,7 +4,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import ArrowButton from '../components/button/ArrowButton.tsx';
+import ArrowButton from '../components/ArrowButton.tsx';
 import "../styles/AboutMe.css";
 import mePhoto from '../assets/mePhoto.jpg';
 
@@ -123,7 +123,7 @@ const AboutMe = () => {
               Moscow
               Age: 21 years old
             </div>
-            <img className="element-image" src={mePhoto} alt="My Photo"/>
+            <img className="element-image" src={mePhoto} alt="My Photo" style={{minWidth: "56%", }}/>
           </div>
 
           <div style={{ margin: "0 auto", width: "65%"}}>
