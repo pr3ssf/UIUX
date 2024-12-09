@@ -77,14 +77,13 @@ export const Header = () => {
         top={0}
         zIndex={1000}
       >
-        <Flex direction="row" alignItems="center" justifyContent="space-between" w="100%">
+        <Flex direction="row" alignItems="center" justifyContent="space-between" w="200%">
           <Box 
             color="white" 
             fontSize="md" 
             padding={4} 
-            maxWidth="100%" 
             flex="1" 
-            overflow="hidden" // Уберёт прокрутку, если текст слишком длинный
+            // overflow="hidden" // Уберёт прокрутку, если текст слишком длинный
           >
             <motion.div
               key={quote} // Добавим ключ, чтобы анимация срабатывала при изменении текста
@@ -93,7 +92,7 @@ export const Header = () => {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 1 }}
             >
-              <Text fontStyle="italic" textAlign="left">
+              <Text fontStyle="italic" textAlign="left" minWidth="100%">
                 <Typewriter
                   words={[quote]} // Используем состояние для цитаты
                   loop={1}

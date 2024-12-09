@@ -149,7 +149,7 @@ const AboutMe = () => {
 
               {/* Professional Development, Courses */}
               <div style={{ marginTop: "20px" }}>
-                <div className="title" style={{ textAlign: "center" }}>
+                <div className="title">
                   Professional Development, Courses
                 </div>
                 <UnorderedList className="description" style={{ fontWeight: "normal" }}>
@@ -198,7 +198,7 @@ const AboutMe = () => {
           className="container-element"
           style={{ display: "flex", flex: "1", flexDirection: "column", width: "100%" }}
         >
-          <div className="element-text" style={{ width: "100%", textAlign: "center" }}>
+          <div className="element-text" style={{ width: "100%", textAlign: "left" }}>
             <div className="title">Work Experience</div>
           </div>
 
@@ -210,7 +210,7 @@ const AboutMe = () => {
             <div>
               <strong>Experience:</strong>
             </div>
-            <UnorderedList>
+            <UnorderedList style={{ listStylePosition: 'outside', paddingLeft: '20px' }}>
               <ListItem>Level design and level art for multiplayer maps (from concept to whitebox).</ListItem>
               <ListItem>
                 Modeling in a realistic setting using AAA/Atlas pipelines with LOD support and rendering optimization.
@@ -226,10 +226,11 @@ const AboutMe = () => {
                 Collaboration with the backend team on engine-related questions and player-world interactions.
               </ListItem>
             </UnorderedList>
+
             <div>
               <strong>Achievements:</strong>
             </div>
-            <UnorderedList>
+            <UnorderedList style={{ listStylePosition: 'outside', paddingLeft: '20px' }}>
               <ListItem>
                 Developed 6 levels in a realistic setting with full integration of environment and lighting.
               </ListItem>
@@ -238,8 +239,10 @@ const AboutMe = () => {
               <ListItem>Prepared commercial project for publication on marketplaces.</ListItem>
             </UnorderedList>
           </div>
+
         </div>
       </div>
+
 
       <div className="buffer"></div>
 
@@ -276,7 +279,7 @@ const AboutMe = () => {
             </UnorderedList>
           </div>
 
-          <div className="element-text" style={{ width: "100%" }}>
+          <div className="element-text" style={{ width: "100%", alignItems: "left"}}>
             <div className="title">Contacts</div>
             <div>
               Телефон: <strong >+7 915 560-80-64</strong>
