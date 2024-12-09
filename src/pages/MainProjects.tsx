@@ -125,7 +125,7 @@ const MainProjects = () => {
 
       {/* Section 1 */}
       <div id="parallax2" className="parallax-container parallax-container2">
-        <div className="container-element" style={{display: "flex", flexDirection: "column", width: "100%", height: "100%"}}>
+        <div className="container-element">
           <div className="element-text">
             <div className="element-text-title">Project Title</div>
             <div className="element-text-description">

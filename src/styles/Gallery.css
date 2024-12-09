@@ -97,8 +97,6 @@
     align-items: center;
     z-index: 1000;
     cursor: zoom-out;
-
-    /* Анимация затемнения */
     animation: fadeIn 0.3s forwards;
 }
 

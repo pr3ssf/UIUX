@@ -24,9 +24,9 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     const { clientX, currentTarget } = event;
     const { offsetWidth } = currentTarget;
 
-    if (clientX < offsetWidth * 0.25) {
+    if (clientX < offsetWidth * 0.4) {
       prevImage();
-    } else if (clientX > offsetWidth * 0.75) {
+    } else if (clientX > offsetWidth * 0.6) {
       nextImage();
     } else {
       setIsImageEnlarged(true);

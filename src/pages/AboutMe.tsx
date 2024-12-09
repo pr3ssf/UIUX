@@ -115,18 +115,24 @@ const AboutMe = () => {
 
       {/* Параллакс контейнер 2 - Self */}
       <div id="parallax2" className="parallax-container parallax-container2">
-      <div className="container-element" style={{ width: "100%", margin: "0 auto", minHeight: "100%"}}>
+      <div className="container-element" style={{ flexDirection: "row", width: "100%", margin: "0 auto", minHeight: "100%"}}>
           <div className="element-text" style={{ margin: "0 auto", width: "35%", }}>
             <div className="element-text-title">Alexander Saprykin</div>
             <div className="element-text-description">
-              Generalist / Lead 3D
-              Moscow
-              Age: 21 years old
+              Generalist / Lead 3D, Moscow, 21 y.o.
             </div>
             <img className="element-image" src={mePhoto} alt="My Photo" style={{minWidth: "56%", }}/>
           </div>
 
-          <div style={{ margin: "0 auto", width: "65%"}}>
+          <div style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "0 auto",
+              width: "65%",
+              gap: "8px",
+              
+            }}
+            >
             <div className="element-text">
               {/* Incomplete Higher Education */}
               <div>
