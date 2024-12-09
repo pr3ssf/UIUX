@@ -78,20 +78,27 @@ export const Header = () => {
         zIndex={1000}
       >
         <Flex direction="row" alignItems="center" justifyContent="space-between" w="100%">
-          <Box color="white" fontSize="md" padding={4} width="50%">
+          <Box 
+            color="white" 
+            fontSize="md" 
+            padding={4} 
+            maxWidth="100%" 
+            flex="1" 
+            overflow="hidden" // Уберёт прокрутку, если текст слишком длинный
+          >
             <motion.div
-              key={quote}  // Добавим ключ, чтобы анимация срабатывала при изменении текста
+              key={quote} // Добавим ключ, чтобы анимация срабатывала при изменении текста
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 1 }}
             >
-              <Text fontStyle="italic" minWidth="100%">
+              <Text fontStyle="italic" textAlign="left">
                 <Typewriter
-                  words={[quote]}  // Используем состояние для цитаты
+                  words={[quote]} // Используем состояние для цитаты
                   loop={1}
                   cursor
-                  cursorStyle='_'
+                  cursorStyle="_"
                   typeSpeed={70}
                   deleteSpeed={50}
                   delaySpeed={1500}
@@ -106,9 +113,11 @@ export const Header = () => {
             </motion.div>
           </Box>
 
-          <Flex direction="row" alignItems="center">
+
+          <Flex direction="row" alignItems="center" gap="16px" flexWrap="nowrap">
             <Link
-              padding={4}
+              textAlign="center"
+              padding={0}
               color="brand.200"
               fontSize="md"
               cursor="pointer"
@@ -118,7 +127,8 @@ export const Header = () => {
               Main Works
             </Link>
             <Link
-              padding={4}
+              textAlign="center"
+              padding={0}
               color="brand.200"
               fontSize="md"
               cursor="pointer"
@@ -128,7 +138,8 @@ export const Header = () => {
               Side Projects
             </Link>
             <Link
-              padding={4}
+              textAlign="center"
+              padding={0}
               color="brand.200"
               fontSize="md"
               cursor="pointer"

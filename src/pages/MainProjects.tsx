@@ -131,6 +131,10 @@ const MainProjects = () => {
               You can add more details here to give viewers a better understanding of what this project is about.
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
             </div>
           </div>
           <Gallery images={gallery1}/>
@@ -148,6 +152,12 @@ const MainProjects = () => {
           <div className="element-text">
             <p className="element-text-title">Project Title</p>
             <p className="element-text-description">
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
             </p>
