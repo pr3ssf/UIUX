@@ -13,7 +13,7 @@ export const Footer = () => {
       boxSizing="border-box"
       display="flex"
       alignItems="center"
-      zIndex={1000}
+      zIndex={500}
     >
       <Flex
         direction={{ base: "column", md: "row" }}

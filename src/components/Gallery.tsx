@@ -43,39 +43,66 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 
   return (
     <div className="gallery-container">
-      <div className="gallery-images" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+      <div
+        className="gallery-images"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
         {images.map((image, index) => (
-          <img 
-            key={index} 
-            src={image} 
-            alt={`Gallery item ${index}`} 
+          <img
+            key={index}
+            src={image}
+            alt={`Gallery item ${index}`}
             className="gallery-image"
-            onClick={(e) => currentIndex === index && handleImageClick(e)}
           />
         ))}
       </div>
+
+      {/* Зоны взаимодействия */}
+      <div
+        className="interaction-zone left-zone"
+        onClick={prevImage}
+      >
+        <span className="interaction-icon">←</span>
+      </div>
+
+      <div
+        className="interaction-zone right-zone"
+        onClick={nextImage}
+      >
+        <span className="interaction-icon">→</span>
+      </div>
+      
+      <div
+        className="interaction-zone center-zone"
+        onClick={() => setIsImageEnlarged(true)}
+      >
+        <span className="interaction-icon">+</span>
+      </div>
+
+      {/* Индикаторы */}
       <div className="indicator-container">
         {images.map((_, index) => (
           <span
             key={index}
-            className={`indicator ${currentIndex === index ? 'active' : ''}`}
+            className={`indicator ${currentIndex === index ? "active" : ""}`}
           ></span>
         ))}
       </div>
 
       {/* Всплывающее изображение */}
       {isImageEnlarged && (
-        <div 
-          className={`popup-overlay ${isHiding ? 'hidden' : ''}`} 
+        <div
+          className={`popup-overlay ${isHiding ? "hidden" : ""}`}
           onClick={handleOverlayClick}
         >
-          <img 
-            src={images[currentIndex]} 
-            alt={`Enlarged item ${currentIndex}`} 
-            className={`popup-image ${isHiding ? 'hidden' : ''}`}
+          <img
+            src={images[currentIndex]}
+            alt={`Enlarged item ${currentIndex}`}
+            className={`popup-image ${isHiding ? "hidden" : ""}`}
           />
         </div>
       )}
+
     </div>
   );
 };
