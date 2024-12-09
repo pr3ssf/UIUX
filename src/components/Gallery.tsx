@@ -8,6 +8,7 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isImageEnlarged, setIsImageEnlarged] = useState<boolean>(false);
+  const [isHiding, setIsHiding] = useState<boolean>(false); // Для анимации уменьшения
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -24,16 +25,20 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     const { offsetWidth } = currentTarget;
 
     if (clientX < offsetWidth * 0.25) {
-      prevImage(); // Нажатие на левую сторону
+      prevImage();
     } else if (clientX > offsetWidth * 0.75) {
-      nextImage(); // Нажатие на правую сторону
+      nextImage();
     } else {
-      setIsImageEnlarged(true); // Увеличиваем изображение
+      setIsImageEnlarged(true);
     }
   };
 
   const handleOverlayClick = () => {
-    setIsImageEnlarged(false); // Закрываем увеличенное изображение
+    setIsHiding(true); // Устанавливаем состояние для запуска анимации
+    setTimeout(() => {
+      setIsHiding(false); // Сбрасываем состояние
+      setIsImageEnlarged(false); // Закрываем увеличенное изображение
+    }, 300); // Тайм-аут равен длительности анимации
   };
 
   return (
@@ -60,11 +65,14 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 
       {/* Всплывающее изображение */}
       {isImageEnlarged && (
-        <div className="popup-overlay" onClick={handleOverlayClick}>
+        <div 
+          className={`popup-overlay ${isHiding ? 'hidden' : ''}`} 
+          onClick={handleOverlayClick}
+        >
           <img 
             src={images[currentIndex]} 
             alt={`Enlarged item ${currentIndex}`} 
-            className="popup-image" 
+            className={`popup-image ${isHiding ? 'hidden' : ''}`}
           />
         </div>
       )}

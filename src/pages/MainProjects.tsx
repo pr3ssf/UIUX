@@ -126,7 +126,6 @@ const MainProjects = () => {
       {/* Section 1 */}
       <div id="parallax2" className="parallax-container parallax-container2">
         <div className="container-element" style={{display: "flex", flexDirection: "column", width: "100%", height: "100%"}}>
-          <Gallery images={gallery1}/>
           <div className="element-text">
             <div className="element-text-title">Project Title</div>
             <div className="element-text-description">
@@ -136,6 +135,7 @@ const MainProjects = () => {
               You can add more details here to give viewers a better understanding of what this project is about.
             </div>
           </div>
+          <Gallery images={gallery1}/>
         </div>
       </div>
 
