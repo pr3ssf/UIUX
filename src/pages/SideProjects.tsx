@@ -1,8 +1,6 @@
 import "../styles/MainProjects.css";
 import yourImage from "../assets/Main Page.png";
 import { 
-  UnorderedList, 
-  ListItem, 
   Flex,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";

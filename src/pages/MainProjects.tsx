@@ -4,8 +4,6 @@ import image1_2 from "../assets/bgBubblesBlurred.png";
 import image1_3 from "../assets/Main Page.png"
 
 import { 
-  UnorderedList, 
-  ListItem, 
   Flex,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
