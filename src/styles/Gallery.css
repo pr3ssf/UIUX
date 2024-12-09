@@ -1,41 +1,41 @@
 .gallery-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    position: relative; /* Позволяет использовать абсолютное позиционирование для индикаторов */
+    overflow: hidden; /* Скрывает переполнение */
+    cursor: pointer; /* Указывает, что элемент кликабельный */
     width: 100%;
     max-width: 800px;
-    overflow: hidden;
-  }
-  
-  .gallery-images {
+    border-radius: 8px; /* Закругление краев изображения */
+}
+
+.gallery-images {
     display: flex;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .gallery-image {
-    border-radius: 8px;
-  }
-  
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.3);
-    color: black;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    border: 2px solid gray; /* Добавлен серый бордер толщиной 2 пикселя */
-    border-radius: 8px; /* Круглые углы для более мягкого внешнего вида */
-  }
-  
-  .arrow-left {
-    left: 10px;
-  }
-  
-  .arrow-right {
-    right: 10px;
-  }
-  
+    transition: transform 0.5s ease; /* Плавный переход при смене изображений */
+}
+
+.gallery-image {
+    width: 100%; /* Ширина изображения */
+    object-fit: cover; /* Обеспечивает правильное отображение изображения */
+}
+
+.indicator-container {
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10px; /* Отступ снизу */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    display: flex;
+    justify-content: center;
+    z-index: 10; /* Поверх изображений */
+}
+
+.indicator {
+    width: 10px; /* Ширина точки */
+    height: 10px; /* Высота точки */
+    border-radius: 50%; /* Круглая форма */
+    background-color: gray; /* Цвет неактивной точки */
+    margin: 0 5px; /* Отступ между точками */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+.indicator.active {
+    background-color: white; /* Цвет активной точки */
+}

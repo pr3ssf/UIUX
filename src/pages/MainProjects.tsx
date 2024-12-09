@@ -1,6 +1,7 @@
 import "../styles/MainProjects.css";
 import image1_1 from "../assets/Main Page.png";
 import image1_2 from "../assets/bgBubblesBlurred.png";
+import image1_3 from "../assets/Main Page.png"
 
 import { 
   UnorderedList, 
@@ -14,7 +15,8 @@ import Gallery from "../components/Gallery.tsx";
 const MainProjects = () => {
   const gallery1 = [
     image1_1,
-    image1_2
+    image1_2,
+    image1_3
     // Добавьте пути к своим изображениям
   ];
 
