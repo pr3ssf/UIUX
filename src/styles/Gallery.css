@@ -1,3 +1,4 @@
+/* Основной контейнер */
 .gallery-container {
     position: relative;
     overflow: hidden;
@@ -5,6 +6,7 @@
     width: 100%;
     max-width: 800px;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-images {
@@ -41,25 +43,78 @@
     background-color: white;
 }
 
-/* Стиль для всплывающего изображения */
+/* Анимация для затемнения фона */
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+/* Анимация для увеличения изображения */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Стиль для всплывающего окна */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Выше всех остальных элементов */
-    cursor: zoom-out; /* Указывает на возможность уменьшения изображения */
+    z-index: 1000;
+    cursor: zoom-out;
+
+    /* Анимация затемнения */
+    animation: fadeIn 0.3s forwards;
 }
 
+.popup-overlay.hidden {
+    animation: fadeOut 0.3s forwards;
+}
+
+/* Стиль для увеличенного изображения */
 .popup-image {
-    max-width: 90%; /* Ограничиваем максимальный размер */
+    max-width: 90%;
     max-height: 90%;
-    object-fit: contain; /* Сохраняем пропорции изображения */
-    border-radius: 8px; /* Немного закругляем углы */
-    transition: transform 0.3s ease; /* Плавный переход */
+    object-fit: contain;
+    border-radius: 8px;
+    animation: zoomIn 0.3s forwards;
+}
+
+.popup-image.hidden {
+    animation: zoomOut 0.3s forwards;
 }
