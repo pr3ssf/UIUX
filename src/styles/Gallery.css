@@ -1,41 +1,65 @@
 .gallery-container {
-    position: relative; /* Позволяет использовать абсолютное позиционирование для индикаторов */
-    overflow: hidden; /* Скрывает переполнение */
-    cursor: pointer; /* Указывает, что элемент кликабельный */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
     width: 100%;
     max-width: 800px;
-    border-radius: 8px; /* Закругление краев изображения */
+    border-radius: 8px;
 }
 
 .gallery-images {
     display: flex;
-    transition: transform 0.5s ease; /* Плавный переход при смене изображений */
+    transition: transform 0.5s ease;
 }
 
 .gallery-image {
-    width: 100%; /* Ширина изображения */
-    object-fit: cover; /* Обеспечивает правильное отображение изображения */
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
 .indicator-container {
-    position: absolute; /* Абсолютное позиционирование */
-    bottom: 10px; /* Отступ снизу */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Центрирование по горизонтали */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    z-index: 10; /* Поверх изображений */
+    z-index: 10;
 }
 
 .indicator {
-    width: 10px; /* Ширина точки */
-    height: 10px; /* Высота точки */
-    border-radius: 50%; /* Круглая форма */
-    background-color: gray; /* Цвет неактивной точки */
-    margin: 0 5px; /* Отступ между точками */
-    transition: background-color 0.3s; /* Плавный переход цвета */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
 .indicator.active {
-    background-color: white; /* Цвет активной точки */
+    background-color: white;
+}
+
+/* Стиль для всплывающего изображения */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Выше всех остальных элементов */
+    cursor: zoom-out; /* Указывает на возможность уменьшения изображения */
+}
+
+.popup-image {
+    max-width: 90%; /* Ограничиваем максимальный размер */
+    max-height: 90%;
+    object-fit: contain; /* Сохраняем пропорции изображения */
+    border-radius: 8px; /* Немного закругляем углы */
+    transition: transform 0.3s ease; /* Плавный переход */
 }

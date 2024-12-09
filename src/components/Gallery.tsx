@@ -7,14 +7,13 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isImageEnlarged, setIsImageEnlarged] = useState<boolean>(false);
 
   const nextImage = () => {
-    console.log("Next image");
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
   
   const prevImage = () => {
-    console.log("Previous image");
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
@@ -24,19 +23,30 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     const { clientX, currentTarget } = event;
     const { offsetWidth } = currentTarget;
 
-    // Определяем, на какую сторону было нажато
     if (clientX < offsetWidth * 0.25) {
       prevImage(); // Нажатие на левую сторону
     } else if (clientX > offsetWidth * 0.75) {
       nextImage(); // Нажатие на правую сторону
+    } else {
+      setIsImageEnlarged(true); // Увеличиваем изображение
     }
   };
 
+  const handleOverlayClick = () => {
+    setIsImageEnlarged(false); // Закрываем увеличенное изображение
+  };
+
   return (
-    <div className="gallery-container" onClick={handleImageClick}>
+    <div className="gallery-container">
       <div className="gallery-images" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {images.map((image, index) => (
-          <img key={index} src={image} alt={`Gallery item ${index}`} className="gallery-image" />
+          <img 
+            key={index} 
+            src={image} 
+            alt={`Gallery item ${index}`} 
+            className="gallery-image"
+            onClick={(e) => currentIndex === index && handleImageClick(e)}
+          />
         ))}
       </div>
       <div className="indicator-container">
@@ -47,6 +57,17 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
           ></span>
         ))}
       </div>
+
+      {/* Всплывающее изображение */}
+      {isImageEnlarged && (
+        <div className="popup-overlay" onClick={handleOverlayClick}>
+          <img 
+            src={images[currentIndex]} 
+            alt={`Enlarged item ${currentIndex}`} 
+            className="popup-image" 
+          />
+        </div>
+      )}
     </div>
   );
 };
