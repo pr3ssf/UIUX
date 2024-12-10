@@ -1,5 +1,22 @@
 import "../styles/MainProjects.css";
-import yourImage from "../assets/Main Page.png";
+
+import far_1 from "../assets/side1-far/far_1.png";
+import far_2 from "../assets/side1-far/far_2.png";
+import far_3 from "../assets/side1-far/far_3.png";
+import far_4 from "../assets/side1-far/far_4.png";
+
+import _204_1 from "../assets/side2-204/204_1.png";
+import _204_2 from "../assets/side2-204/204_2.png";
+import _204_3 from "../assets/side2-204/204_3.png";
+import _204_4 from "../assets/side2-204/204_4.png";
+
+import sev_1 from "../assets/side3-sev/sev_1.jpg";
+import sev_2 from "../assets/side3-sev/sev_2.jpg";
+import sev_3 from "../assets/side3-sev/sev_3.jpg";
+import sev_4 from "../assets/side3-sev/sev_4.jpg";
+import sev_5 from "../assets/side3-sev/sev_5.jpg";
+
+import Gallery from "../components/Gallery.tsx";
 import { 
   Flex,
 } from "@chakra-ui/react";
@@ -7,6 +24,19 @@ import { useState, useEffect } from "react";
 import ArrowButton from '../components/ArrowButton.tsx';
 
 const SideProjects = () => {
+
+  const gallery1 = [
+    far_1, far_2, far_3, far_4
+  ];
+
+  const gallery2 = [
+    _204_1, _204_2, _204_3, _204_4
+  ];
+  
+  const gallery3 = [
+    sev_1, sev_2, sev_3, sev_4, sev_5
+  ];
+
   const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -113,91 +143,64 @@ const SideProjects = () => {
       {/* Section 1 */}
       <div id="parallax2" className="parallax-container parallax-container2">
         <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
           <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-        </div>
-
-        <div className="container-element">
-          <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </div>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          <Gallery images={gallery1} userHeight="50%" userWidth="460px"/>
         </div>
       </div>
 
       <div className="buffer"></div>
 
       {/* Section 2 */}
-      <div id="parallax3" className="parallax-container parallax-container3">
-        <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
-          <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-        </div>
-
+      <div id="parallax3" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </div>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          <Gallery images={gallery2}/>
         </div>
       </div>
 
       <div className="buffer"></div>
 
       {/* Section 3 */}
-      <div id="parallax4" className="parallax-container parallax-container4">
-        <div className="container-element">
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
-          <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-        </div>
-
+      <div id="parallax4" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </div>
           </div>
-          <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div>
+          <Gallery images={gallery3} userHeight="50%" userWidth="730px"/>
         </div>
       </div>
 

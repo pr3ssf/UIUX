@@ -1,7 +1,23 @@
 import "../styles/MainProjects.css";
-import image1_1 from "../assets/Main Page.png";
-import image1_2 from "../assets/bgBubblesBlurred.png";
-import image1_3 from "../assets/Main Page.png"
+
+import fd_1 from "../assets/main1-FD/fd_1.png";
+import fd_2 from "../assets/main1-FD/fd_2.png";
+import fd_3 from "../assets/main1-FD/fd_3.png";
+import fd_4 from "../assets/main1-FD/fd_4.png";
+
+import bf_1 from "../assets/main2-BF/bf_1.png";
+import bf_2 from "../assets/main2-BF/bf_2.png";
+import bf_3 from "../assets/main2-BF/bf_3.png";
+import bf_4 from "../assets/main2-BF/bf_4.png";
+
+import rp_1 from "../assets/main3-RP/rp_1.png";
+import rp_2 from "../assets/main3-RP/rp_2.png";
+import rp_3 from "../assets/main3-RP/rp_3.png";
+import rp_4 from "../assets/main3-RP/rp_4.png";
+
+import ah_1 from "../assets/main4-AH/ah_1.png";
+import ah_2 from "../assets/main4-AH/ah_2.png";
+import ah_3 from "../assets/main4-AH/ah_3.png";
 
 import { 
   Flex,
@@ -11,12 +27,23 @@ import ArrowButton from '../components/ArrowButton.tsx';
 import Gallery from "../components/Gallery.tsx";
 
 const MainProjects = () => {
+
   const gallery1 = [
-    image1_1,
-    image1_2,
-    image1_3
-    // Добавьте пути к своим изображениям
+    fd_1, fd_2, fd_3, fd_4
   ];
+
+  const gallery2 = [
+    bf_1, bf_2, bf_3, bf_4
+  ];
+  
+  const gallery3 = [
+    rp_1, rp_2, rp_3, rp_4
+  ];
+
+  const gallery4 = [
+    ah_1, ah_2, ah_3
+  ];
+  
 
   const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -137,79 +164,77 @@ const MainProjects = () => {
               You can add more details here to give viewers a better understanding of what this project is about.
             </div>
           </div>
-          <Gallery images={gallery1}/>
+          <Gallery images={gallery1} />
         </div>
       </div>
 
       <div className="buffer"></div>
 
       {/* Section 2 */}
-      <div id="parallax3" className="parallax-container parallax-container3">
-        <div className="container-element">
-          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div> */}
-          <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-        </div>
-
+      <div id="parallax3" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </div>
           </div>
-          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div> */}
+          <Gallery images={gallery2}/>
         </div>
       </div>
 
       <div className="buffer"></div>
 
       {/* Section 3 */}
-      <div id="parallax4" className="parallax-container parallax-container4">
-        <div className="container-element">
-          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div> */}
-          <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
-          </div>
-        </div>
-
+      <div id="parallax4" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <p className="element-text-title">Project Title</p>
-            <p className="element-text-description">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
               This is a description of the project. It explains the goals, features, and technology used in this project. 
               You can add more details here to give viewers a better understanding of what this project is about.
-            </p>
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </div>
           </div>
-          {/* <div style={{ flex: 2, maxWidth: "600px" }}>
-            <img src={yourImage} alt="Project Description" className="element-image" />
-          </div> */}
+          <Gallery images={gallery3}/>
         </div>
       </div>
 
       <div className="buffer"></div>
+
+      <div id="parallax5" className="parallax-container parallax-container2">
+        <div className="container-element">
+          <div className="element-text">
+            <div className="element-text-title">Project Title</div>
+            <div className="element-text-description">
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+              This is a description of the project. It explains the goals, features, and technology used in this project. 
+              You can add more details here to give viewers a better understanding of what this project is about.
+            </div>
+          </div>
+          <Gallery images={gallery4}/>
+        </div>
+      </div>
+
+      <div className="buffer"></div>
+
     </div>
   );
 };

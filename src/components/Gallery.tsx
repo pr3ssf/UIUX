@@ -3,9 +3,11 @@ import "../styles/Gallery.css";
 
 interface GalleryProps {
   images: string[];
+  userHeight?: string;
+  userWidth?: string;
 }
 
-const Gallery: React.FC<GalleryProps> = ({ images }) => {
+const Gallery: React.FC<GalleryProps> = ({ images, userHeight, userWidth }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isImageEnlarged, setIsImageEnlarged] = useState<boolean>(false);
   const [isHiding, setIsHiding] = useState<boolean>(false); // Для анимации уменьшения
@@ -20,19 +22,6 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     );
   };
 
-  const handleImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, currentTarget } = event;
-    const { offsetWidth } = currentTarget;
-
-    if (clientX < offsetWidth * 0.4) {
-      prevImage();
-    } else if (clientX > offsetWidth * 0.6) {
-      nextImage();
-    } else {
-      setIsImageEnlarged(true);
-    }
-  };
-
   const handleOverlayClick = () => {
     setIsHiding(true); // Устанавливаем состояние для запуска анимации
     setTimeout(() => {
@@ -42,7 +31,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
   };
 
   return (
-    <div className="gallery-container">
+    <div className="gallery-container" style={{ height: userHeight || 'auto', width: userWidth || 'auto'}}>
       <div
         className="gallery-images"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
