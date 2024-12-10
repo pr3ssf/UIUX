@@ -45,7 +45,7 @@ const MainProjects = () => {
   ];
   
 
-  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
+  const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4", "parallax5"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
     // Функция для блокировки прокрутки страницы
@@ -125,7 +125,7 @@ const MainProjects = () => {
       >
         {/* Кнопка вверх */}
         <ArrowButton
-          symbol="up"
+          direction="up"
           onClick={scrollToPrevious}
           isDisabled={currentIndex === 0}
           mt="7rem"
@@ -133,7 +133,7 @@ const MainProjects = () => {
 
         {/* Кнопка вниз */}
         <ArrowButton
-          symbol="down"
+          direction="down"
           onClick={scrollToNext}
           isDisabled={currentIndex === containerIds.length - 1}
           mb="7rem"
@@ -152,16 +152,9 @@ const MainProjects = () => {
       <div id="parallax2" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">Factory District</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The project was inspired by showcasing an industrial environment with dynamic weather. The map includes four weather modes: daytime, nighttime, and both with rain. The goal was to create an immersive atmosphere where players can experience different environmental conditions. Each weather mode was designed to enhance the visual experience, from bright sunlight to a moody nighttime ambiance. The rainy modes add depth, with water effects and wet surfaces affecting the map dynamics. The technology behind the map features dynamic lighting, rain particle systems, and advanced shaders to reflect weather changes, offering players diverse experiences.
             </div>
           </div>
           <Gallery images={gallery1} />
@@ -174,16 +167,9 @@ const MainProjects = () => {
       <div id="parallax3" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">Battle Field</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The project was inspired by large-scale combat in a dynamic environment. The daytime mode offers clear visibility for strategic movement, while nighttime adds tactical suspense with limited visibility. The rainy modes introduce challenges with slippery terrain and low visibility, affecting combat. The map features diverse terrain, including open fields, forests, and high grounds, designed for various combat experiences. Dynamic lighting, realistic rain effects, and custom terrain shaders enhance immersion, allowing the environment to adapt to weather changes. The Battle Field map offers a versatile experience, with gameplay that changes based on the weather mode.
             </div>
           </div>
           <Gallery images={gallery2}/>
@@ -196,16 +182,9 @@ const MainProjects = () => {
       <div id="parallax4" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">Abandoned River Port</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The project was inspired by decay and abandonment, focusing on an industrial site overtaken by nature. The map features four weather modes: daytime, nighttime, and both with rain. The goal was to create an eerie, atmospheric environment for exploring a once-thriving port in ruins. Daytime evokes abandonment under harsh sunlight, while nighttime adds mystery. The rainy modes intensify the atmosphere with fog and water effects. The map includes dilapidated structures, overgrown vegetation, and interactive elements like rusting machinery. Advanced lighting, shaders, and particle effects simulate time and weather, making each mode unique and immersive.
             </div>
           </div>
           <Gallery images={gallery3}/>
@@ -217,16 +196,9 @@ const MainProjects = () => {
       <div id="parallax5" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">Aviation Hangar</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The project was inspired by showcasing an industrial environment with dynamic weather. The map includes four weather modes: daytime, nighttime, and both with rain. The goal was to create an immersive atmosphere where players can experience different environmental conditions. Each weather mode was designed to enhance the visual experience, from bright sunlight to a moody nighttime ambiance. The rainy modes add depth, with water effects and wet surfaces affecting the map dynamics. The technology behind the map features dynamic lighting, rain particle systems, and advanced shaders to reflect weather changes, offering players diverse experiences. This variety of conditions enhances gameplay by providing unique challenges and aesthetics.
             </div>
           </div>
           <Gallery images={gallery4}/>

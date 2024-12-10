@@ -88,7 +88,7 @@ const AboutMe = () => {
       >
         {/* Кнопка вверх */}
         <ArrowButton
-          symbol="up"
+          direction="up"
           onClick={scrollToPrevious}
           isDisabled={currentIndex === 0}
           mt="7rem"
@@ -96,7 +96,7 @@ const AboutMe = () => {
 
         {/* Кнопка вниз */}
         <ArrowButton
-          symbol="down"
+          direction="down"
           onClick={scrollToNext}
           isDisabled={currentIndex === containerIds.length - 1}
           mb="7rem"

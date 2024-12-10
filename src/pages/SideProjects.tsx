@@ -117,7 +117,7 @@ const SideProjects = () => {
       >
         {/* Кнопка вверх */}
         <ArrowButton
-          symbol="up"
+          direction="up"
           onClick={scrollToPrevious}
           isDisabled={currentIndex === 0}
           mt="7rem"
@@ -125,7 +125,7 @@ const SideProjects = () => {
 
         {/* Кнопка вниз */}
         <ArrowButton
-          symbol="down"
+          direction="down"
           onClick={scrollToNext}
           isDisabled={currentIndex === containerIds.length - 1}
           mb="7rem"
@@ -144,16 +144,9 @@ const SideProjects = () => {
       <div id="parallax2" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">FAR: Lone Sails</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The creation of the ship model from *FAR: Lone Sails* was inspired by the game's post-apocalyptic and steampunk aesthetics. The design combines rugged, industrial elements with a sense of age and wear. The modeling focused on creating a distinctive silhouette, with weathered metal plating, pipes, and mechanical components. Textures like rust, faded paint, and exposed rivets were added to enhance the ship’s history. Dynamic lighting and shading were used to ensure it fit seamlessly into the game’s environment, highlighting its role as a vehicle for survival.
             </div>
           </div>
           <Gallery images={gallery1} userHeight="50%" userWidth="460px"/>
@@ -166,16 +159,9 @@ const SideProjects = () => {
       <div id="parallax3" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">Mercedes-Benz C204</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The creation of the Mercedes-Benz C204 model focused on achieving an accurate, high-quality exterior representation. The model was built using reference images to ensure precise proportions and details, such as the distinctive curves, headlights, and grille. Special attention was given to the car’s surface smoothness, ensuring realistic reflections and a polished appearance. The exterior was modeled with a high level of detail, including body panels, wheels, and trims. The absence of the interior allowed for more focus on the car’s exterior features, ensuring it matched the original design while maintaining visual appeal.
             </div>
           </div>
           <Gallery images={gallery2}/>
@@ -188,16 +174,9 @@ const SideProjects = () => {
       <div id="parallax4" className="parallax-container parallax-container2">
         <div className="container-element">
           <div className="element-text">
-            <div className="element-text-title">Project Title</div>
+            <div className="element-text-title">Last Interior Design Project</div>
             <div className="element-text-description">
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
-              This is a description of the project. It explains the goals, features, and technology used in this project. 
-              You can add more details here to give viewers a better understanding of what this project is about.
+              The last interior design project focused on creating a modern, functional, and cozy space. The room features neutral tones, with light walls and wooden accents, creating a warm and inviting atmosphere. A minimalist design approach was used, incorporating sleek furniture pieces like a dresser and vanity, accented with soft lighting. The furniture choices blend with the overall aesthetic, offering both style and practicality. The room also includes artistic elements, such as framed paintings and a round mirror, which add character and elegance. This space provides a balanced combination of comfort, functionality, and modern design.
             </div>
           </div>
           <Gallery images={gallery3} userHeight="50%" userWidth="730px"/>
