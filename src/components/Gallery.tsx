@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import "../styles/Gallery.css";
 
+// Import SVGs
+import leftArrow from "../assets/arrows/map-arrow-left-svgrepo-com.svg";
+import rightArrow from "../assets/arrows/map-arrow-right-svgrepo-com.svg";
+import squareArrow from "../assets/arrows/map-arrow-square-svgrepo-com.svg";
+
 interface GalleryProps {
   images: string[];
   userHeight?: string;
@@ -10,28 +15,26 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ images, userHeight, userWidth }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isImageEnlarged, setIsImageEnlarged] = useState<boolean>(false);
-  const [isHiding, setIsHiding] = useState<boolean>(false); // Для анимации уменьшения
+  const [isHiding, setIsHiding] = useState<boolean>(false); // For animation
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-  
+
   const prevImage = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   const handleOverlayClick = () => {
-    setIsHiding(true); // Устанавливаем состояние для запуска анимации
+    setIsHiding(true); // Start hide animation
     setTimeout(() => {
-      setIsHiding(false); // Сбрасываем состояние
-      setIsImageEnlarged(false); // Закрываем увеличенное изображение
-    }, 300); // Тайм-аут равен длительности анимации
+      setIsHiding(false); // Reset state
+      setIsImageEnlarged(false); // Close enlarged image
+    }, 300); // Timeout duration equals animation length
   };
 
   return (
-    <div className="gallery-container" style={{ height: userHeight || 'auto', width: userWidth || 'auto'}}>
+    <div className="gallery-container" style={{ height: userHeight || 'auto', width: userWidth || 'auto' }}>
       <div
         className="gallery-images"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -46,29 +49,20 @@ const Gallery: React.FC<GalleryProps> = ({ images, userHeight, userWidth }) => {
         ))}
       </div>
 
-      {/* Зоны взаимодействия */}
-      <div
-        className="interaction-zone left-zone"
-        onClick={prevImage}
-      >
-        <span className="interaction-icon">←</span>
+      {/* Interaction zones */}
+      <div className="interaction-zone left-zone" onClick={prevImage}>
+        <img src={leftArrow} alt="Previous" className="interaction-icon" />
       </div>
 
-      <div
-        className="interaction-zone right-zone"
-        onClick={nextImage}
-      >
-        <span className="interaction-icon">→</span>
-      </div>
-      
-      <div
-        className="interaction-zone center-zone"
-        onClick={() => setIsImageEnlarged(true)}
-      >
-        <span className="interaction-icon">+</span>
+      <div className="interaction-zone right-zone" onClick={nextImage}>
+        <img src={rightArrow} alt="Next" className="interaction-icon" />
       </div>
 
-      {/* Индикаторы */}
+      <div className="interaction-zone center-zone" onClick={() => setIsImageEnlarged(true)}>
+        <img src={squareArrow} alt="Enlarge" className="interaction-icon" />
+      </div>
+
+      {/* Indicators */}
       <div className="indicator-container">
         {images.map((_, index) => (
           <span
@@ -78,7 +72,7 @@ const Gallery: React.FC<GalleryProps> = ({ images, userHeight, userWidth }) => {
         ))}
       </div>
 
-      {/* Всплывающее изображение */}
+      {/* Enlarged image popup */}
       {isImageEnlarged && (
         <div
           className={`popup-overlay ${isHiding ? "hidden" : ""}`}
@@ -91,7 +85,6 @@ const Gallery: React.FC<GalleryProps> = ({ images, userHeight, userWidth }) => {
           />
         </div>
       )}
-
     </div>
   );
 };
