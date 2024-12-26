@@ -31,8 +31,7 @@ body {
 .parallax-container4 {
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 6rem 0;
-  gap: 1.6em;
+  padding-bottom: 5%;
 }
 
 .parallax-container2 {
@@ -50,11 +49,13 @@ body {
 /* Контейнеры для элементов */
 .container-element {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 0 20px;
+  justify-content: center;
+  width: 100%;
   height: 100%;
+  gap: 8px;
+  margin-top: 3.5%;
 }
 
 .element-image {
@@ -66,27 +67,33 @@ body {
 
 /* Стили текста */
 .element-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 1;
   text-align: left;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 8px;
-  margin: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  height: 100%;
+  padding: 1%;
+  width: 95%;
+  height: 100%; /* Занимает всю высоту родителя */
   z-index: 1;
 }
+
 
 .element-text-title {
   font-size: 1.125rem;
   font-weight: bold;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .element-text-description {
-  margin-top: 0.5rem;
+  margin: 0;
   font-size: 1rem;
   line-height: 1.5;
   color: #333;

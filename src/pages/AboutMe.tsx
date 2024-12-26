@@ -4,8 +4,9 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import ArrowButton from '../components/button/ArrowButton.tsx';
+import ArrowButton from '../components/ArrowButton.tsx';
 import "../styles/AboutMe.css";
+import mePhoto from '../assets/mePhoto.jpg';
 
 const AboutMe = () => {
   const containerIds = ["parallax1", "parallax2", "parallax3", "parallax4"];
@@ -87,7 +88,7 @@ const AboutMe = () => {
       >
         {/* Кнопка вверх */}
         <ArrowButton
-          symbol="up"
+          direction="up"
           onClick={scrollToPrevious}
           isDisabled={currentIndex === 0}
           mt="7rem"
@@ -95,7 +96,7 @@ const AboutMe = () => {
 
         {/* Кнопка вниз */}
         <ArrowButton
-          symbol="down"
+          direction="down"
           onClick={scrollToNext}
           isDisabled={currentIndex === containerIds.length - 1}
           mb="7rem"
@@ -114,33 +115,24 @@ const AboutMe = () => {
 
       {/* Параллакс контейнер 2 - Self */}
       <div id="parallax2" className="parallax-container parallax-container2">
-      <div className="container-element" style={{ width: "100%", margin: "0 auto" }}>
-          <div className="element-text" style={{ margin: "0 auto" }}>
+      <div className="container-element" style={{ flexDirection: "row", width: "100%", margin: "0 auto", minHeight: "100%"}}>
+          <div className="element-text" style={{ margin: "0 auto", width: "35%", }}>
             <div className="element-text-title">Alexander Saprykin</div>
             <div className="element-text-description">
-              Generalist / Lead 3D<br />
-              Moscow<br />
-              Age: 21 years old
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+              Generalist / Lead 3D, Moscow, 21 y.o.
             </div>
+            <img className="element-image" src={mePhoto} alt="My Photo" style={{minWidth: "56%", }}/>
           </div>
 
-          <div>
+          <div style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "0 auto",
+              width: "65%",
+              gap: "8px",
+              
+            }}
+            >
             <div className="element-text">
               {/* Incomplete Higher Education */}
               <div>
@@ -157,7 +149,7 @@ const AboutMe = () => {
 
               {/* Professional Development, Courses */}
               <div style={{ marginTop: "20px" }}>
-                <div className="title" style={{ textAlign: "center" }}>
+                <div className="title">
                   Professional Development, Courses
                 </div>
                 <UnorderedList className="description" style={{ fontWeight: "normal" }}>
@@ -181,7 +173,7 @@ const AboutMe = () => {
             </div>
 
             <div className="element-text">
-              <p className="element-text-title">Skills</p>
+              <div className="element-text-title">Skills</div>
               <UnorderedList className="element-text-description">
                 <ListItem>
                   <strong>Advanced:</strong> Blender, Marmoset Toolbag, Unity, Adobe Substance 3D Painter
@@ -206,7 +198,7 @@ const AboutMe = () => {
           className="container-element"
           style={{ display: "flex", flex: "1", flexDirection: "column", width: "100%" }}
         >
-          <div className="element-text" style={{ width: "100%", textAlign: "center" }}>
+          <div className="element-text" style={{ width: "100%", textAlign: "left" }}>
             <div className="title">Work Experience</div>
           </div>
 
@@ -218,7 +210,7 @@ const AboutMe = () => {
             <div>
               <strong>Experience:</strong>
             </div>
-            <UnorderedList>
+            <UnorderedList style={{ listStylePosition: 'outside', paddingLeft: '20px' }}>
               <ListItem>Level design and level art for multiplayer maps (from concept to whitebox).</ListItem>
               <ListItem>
                 Modeling in a realistic setting using AAA/Atlas pipelines with LOD support and rendering optimization.
@@ -234,10 +226,11 @@ const AboutMe = () => {
                 Collaboration with the backend team on engine-related questions and player-world interactions.
               </ListItem>
             </UnorderedList>
+
             <div>
               <strong>Achievements:</strong>
             </div>
-            <UnorderedList>
+            <UnorderedList style={{ listStylePosition: 'outside', paddingLeft: '20px' }}>
               <ListItem>
                 Developed 6 levels in a realistic setting with full integration of environment and lighting.
               </ListItem>
@@ -246,8 +239,10 @@ const AboutMe = () => {
               <ListItem>Prepared commercial project for publication on marketplaces.</ListItem>
             </UnorderedList>
           </div>
+
         </div>
       </div>
+
 
       <div className="buffer"></div>
 
@@ -284,7 +279,7 @@ const AboutMe = () => {
             </UnorderedList>
           </div>
 
-          <div className="element-text" style={{ width: "100%" }}>
+          <div className="element-text" style={{ width: "100%", alignItems: "left"}}>
             <div className="title">Contacts</div>
             <div>
               Телефон: <strong >+7 915 560-80-64</strong>
